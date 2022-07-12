@@ -1,0 +1,213 @@
+.beginner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.wrapper__beginnerPlan {
+  font-family: 'Poppins', sans-serif;
+  margin: 90px 5vw;
+
+  padding: 25px 30px 30px 30px;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+}
+.wrapper__beginnerPlan header {
+  font-size: 30px;
+  font-weight: 600;
+  padding-bottom: 20px;
+}
+.wrapper__beginnerPlan .beginnerNav {
+  position: relative;
+  width: 80%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+.wrapper__beginnerPlan .beginnerNav label {
+  display: block;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  line-height: 50px;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  color: #08c096;
+  font-size: 17px;
+  border-radius: 5px;
+  margin: 0 5px;
+  transition: all 0.3s ease;
+}
+
+#loose:checked ~ .beginnerNav label.loose,
+#gain:checked ~ .beginnerNav label.gain {
+  color: #fff;
+}
+
+.beginnerNav .slider {
+  position: absolute;
+  height: 100%;
+  width: 25%;
+  left: 0;
+  bottom: 0;
+  z-index: 0;
+  border-radius: 5px;
+  background: red;
+  transition: all 0.3s ease;
+}
+input[type='radio'] {
+  display: none;
+}
+#loose:checked ~ .beginnerNav .slider {
+  left: 14%;
+}
+#gain:checked ~ .beginnerNav .slider {
+  left: 64%;
+}
+
+section .content {
+  display: none;
+  background: #fff;
+}
+#loose:checked ~ section .content-1,
+#gain:checked ~ section .content-2 {
+  display: block;
+}
+section .content .title {
+  font-size: 21px;
+  font-weight: 500;
+  margin: 30px 0 10px 0;
+}
+section .content p {
+  text-align: justify;
+}
+
+.plans {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+
+  grid-gap: 1rem !important;
+
+  justify-content: center;
+  align-items: start;
+}
+.plans ul li {
+  margin-top: 10px;
+}
+.workout_day,
+.diet_day .meal {
+  padding: 20px 30px !important;
+  line-height: 1.5 !important;
+}
+
+.plans h2 {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.plans h3 {
+  font-size: 24px;
+  font-weight: bold;
+}
+.diet_day,
+.workout_day {
+  margin-top: 22px;
+}
+
+.day__name {
+  cursor: pointer;
+  border: 5px solid #1a202c;
+  margin: 0 0 15px 0;
+  padding: 5px 0;
+  min-width: 64px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  letter-spacing: 0.05rem;
+
+  background: #1fa8e0;
+  transition: 0.5s ease-in-out;
+}
+
+.day__name:hover {
+  box-shadow: 5px 5px 15px 50px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+  background-color: salmon;
+}
+
+.plans h4 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.mealitem,
+.exercise {
+  font-size: 20px;
+}
+
+.plans a {
+  color: #08c096;
+  font-size: 16px;
+}
+
+.all__buttons {
+  display: flex;
+  align-items: baseline;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.button {
+  cursor: pointer;
+  border: 1px solid #1a202c;
+  padding: 8px;
+  min-width: 64px;
+
+  background: #1fa8e0;
+  transition: all 0.1s ease-in;
+}
+
+.button:hover {
+  background: #1a202c;
+  color: #ffffff;
+}
+
+.diet__container {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: 'monday tuesday wednesday thursday friday';
+}
+.firstday {
+  grid-area: monday;
+  margin: 15px;
+}
+.seconday {
+  grid-area: tuesday;
+  margin: 15px;
+}
+.thirday {
+  grid-area: wednesday;
+  margin: 15px;
+}
+.fourday {
+  grid-area: thursday;
+  margin: 15px;
+}
+.lastday {
+  grid-area: friday;
+  margin: 15px;
+}
+
+@media screen and (max-width: 768px) {
+  .plans {
+    grid-template-columns: 1fr;
+  }
+}

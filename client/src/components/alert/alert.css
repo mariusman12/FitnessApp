@@ -1,0 +1,18 @@
+.alert {
+  position: absolute;
+  padding: 0.8rem;
+  margin: 0 auto;
+  opacity: 0.9;
+
+  top: 10px;
+  left: 50%;
+  color: #fff;
+}
+
+.alert-success {
+  background: #08c096;
+}
+
+.alert-danger {
+  background: #a21818;
+}
